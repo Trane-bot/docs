@@ -1,12 +1,11 @@
 ---
 title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+description: ''
 ---
 
 ## Overview
 
-Trane is a machine learning library for automatically generating prediction problems and generating labels for supervised learning.
-Trane is a system designed to advance the automation of the machine learning process. 
+Trane is a machine learning library for automatically generating prediction problems and generating labels for supervised learning. Trane is a system designed to advance the automation of the machine learning process. 
 
 In data science, people usually have a few records of an entity and want to predict what will happen to that entity in the future. 
 Trane is designed to generate time-related prediction problems. 
@@ -21,4 +20,23 @@ Cutoff times are necessary to prevent the classifier from training on the test d
 - Labeling: Trane creates labels according to the prediction tasks, ready to feed into a machine learning algorithm. These labels contain occurrences of specific types of events in the past.
 - Featurization: With Trane, it is possible to generate the feature matrix associated to the data and the labels, according to the prediction tasks. 
 
-In summary, Trane generates prediction problems and the associated labels which can be used to create a feature matrix for a machine learning model
+In summary, Trane generates prediction problems and the associated labels which can be used to create a feature matrix for a machine learning model.
+
+```python
+import trane
+
+data, metadata = trane.load_airbnb()
+entity_columns = ["location"]
+window_size = "2d"
+
+problem_generator = trane.ProblemGenerator(
+    metadata=metadata,
+    window_size=window_size,
+    entity_columns=entity_columns
+)
+problems = problem_generator.generate()
+
+print(f'Generated {len(problems)} problems.')
+print(problems[108])
+print(problems[108].create_target_values(data).head(5))
+```
