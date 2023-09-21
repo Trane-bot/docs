@@ -8,23 +8,26 @@
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#07689F",
-    "light": "#9F3E07",
-    "dark": "#9F3E07",
+    "light": "#0988D0",
+    "dark": "#0988D0",
     "background": {
       "dark": "#090014"
     },
     "anchors": {
-      "from": "#FF7F57",
-      "to": "#9563FF"
+      "from": "#07689F",
+      "to": "#0988D0"
     }
   },
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:support@trane.dev"
+      "url": "mailto:gvsheni@gmail.com"
     }
   ],
-  "topbarCtaButton": {},
+  "topbarCtaButton": {
+    "type": "github",
+    "url": "https://github.com/trane-dev/Trane"
+  },
   "tabs": [],
   "anchors": [
     {
@@ -41,7 +44,7 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart"]
+      "pages": ["home", "install", "getting_started"]
     }
   ],
   "footerSocials": {

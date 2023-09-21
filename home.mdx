@@ -1,0 +1,88 @@
+---
+title: Home
+description: ""
+---
+
+<img
+  className="block dark:hidden"
+  src="/logo/trane-header-with-bg.svg"
+  height="100"
+  noZoom
+  alt="Hero Light"
+/>
+<img
+  className="hidden dark:block"
+  src="/logo/trane-header-no-bg.svg"
+  height="100"
+  noZoom
+  alt="Hero Dark"
+/>
+
+## Seamless Problem Formulation
+
+- Produce thousands of problems from structured datasets
+- Data Flexibility: Single or multi-table dataset support.
+
+Empower Your Data Science Journey with Trane:
+
+```python
+import trane
+
+data, metadata = trane.load_airbnb()
+problem_generator = trane.ProblemGenerator(
+    metadata=metadata,
+    entity_columns=["location"]
+)
+problems = problem_generator.generate()
+
+print(f'Generated {len(problems)} problems.')
+print(problems[108])
+print(problems[108].create_target_values(data).head(5))
+```
+
+Output:
+```
+Generated 168 problems.
+For each <location> predict the majority <rating> in all related records in the next 2 days.
+  location       time  target
+0   London 2021-01-01       5
+1   London 2021-01-03       4
+2   London 2021-01-05       5
+3   London 2021-01-07       4
+4   London 2021-01-09       5
+```
+
+## Make it yours
+
+Update your docs to your brand and add valuable content for the best user conversion.
+
+<CardGroup cols={2}>
+  <Card
+    title="Install"
+    icon="screwdriver-wrench"
+    href="/install"
+  >
+    Use PyPI or GitHub to install Trane
+  </Card>
+  <Card
+    title="Getting Started"
+    icon="code"
+    href="https://mintlify.com/docs/api-playground/openapi"
+  >
+    Learn how to use Trane with our step-by-step guide
+  </Card>
+  <Card
+    title="Demos"
+    icon="book-open"
+    href="https://www.trane.dev/demos"
+  >
+    Check out our demos to see Trane in action
+  </Card>
+  <Card
+    title="Site"
+    icon="stars"
+    href="https://www.trane.dev"
+  >
+    View the homepage for Trane
+  </Card>
+</CardGroup>
